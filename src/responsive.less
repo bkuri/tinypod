@@ -1,0 +1,135 @@
+.list-items (@size, @height:70px, @label:10px, @line:20px) {
+  article.page li {
+    font-size: @size;
+    height: @height;
+    line-height: @line;
+
+    .label {
+      font-size: @label;
+    }
+  }
+}
+
+.media-buttons (@size:30px, @height:70px) {
+  body > footer > .btn-group {
+    height: @height;
+    & > .btn {
+      font-size: @size;
+    }
+  }
+}
+
+.nav-bar (@size, @padding) {
+  body > nav {
+    a.brand {
+      font-size: @size !important;
+    }
+
+    button.btn {
+      padding: @padding !important;
+    }
+  }
+}
+
+.small-version () {
+  article.page header {
+    -webkit-align-items: stretch;
+    -webkit-flex: 0 0 auto;
+    -webkit-flex-direction: column;
+
+    button {
+      -webkit-flex: 1 0 auto;
+    }
+
+    h1 {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    span.btn-group {
+      -webkit-justify-content: center;
+      display: -webkit-flex;
+    }
+  }
+
+  #queue {
+    article {
+      font-size: 60%;
+      min-height: 0;
+
+      .item-feed-title {
+        display: none;
+      }
+
+      span.badge {
+        font-size: 10px;
+      }
+    }
+  }
+
+  #status {
+    display: none;
+  }
+}
+
+// desktop
+@media (min-width: 1025px) {
+}
+
+// wide tablet
+@media (max-width: 1024px) {
+  #queue {
+    .thumbnail span {
+      //font-size: 10px;
+    }
+  }
+
+  .navbar-fixed-top {
+    margin-bottom: 0;
+
+    .navbar-inner {
+      padding: 0 0 5px 0;
+    }
+  }
+}
+
+// tablet
+@media (max-width: 768px) {
+  body {
+    padding: inherit;
+  }
+
+  .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+    margin: inherit;
+  }
+}
+
+// wide phone
+@media (max-width: 480px) {
+  .list-items(26px);
+}
+
+// phone
+@media (max-width: 320px) {
+  .list-items(12px, 50px, 8px);
+  .media-buttons(16px, 40px);
+  .nav-bar(16px, 8px);
+  .small-version;
+}
+
+@media (max-width: 240px) {
+  .list-items(12px, 50px, 8px, 1);
+  .nav-bar(16px, 8px);
+  .small-version;
+}
+
+@media (min-width: 321px) {
+  .list-items(22px, 70px, 8px);
+  .media-buttons(26px);
+  .nav-bar(16px, 8px);
+}
+
+@media (min-width: 481px) {
+  .list-items(24px);
+  .media-buttons(26px, 50px);
+}
