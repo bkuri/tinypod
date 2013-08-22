@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- <meta http-equiv='X-UA-Compatible' content='chrome=1'> -->
+    <title></title>
+    <script src="css/source-sans-pro.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Project name</a>
+          <div class="nav-collapse collapse in" style="height:auto">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </nav>
+
+    <article id="article_details" class="modal hide fade">
+      <header class="modal-header"></header>
+      <section class="modal-body"></section>
+      <footer class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Go back</button>
+        <button class="btn btn-primary">Queue article</button>
+      </footer>
+    </article>
+
+    <div id="wrapper" class="container">
+      <span id="thelist"></span>
+    </div>
+
+    <script id="feeds-tpl" type="text/x-handlebars-template">
+      <header><h1>Feeds</h1></header>
+      <nav class="search-bar"><input class="search-key" type="search"/></nav>
+      <div class="scroll"><ul class="feed-list"></ul></div>
+    </script>
+
+    <script id="feed-li-tpl" type="text/x-handlebars-template">
+      {{#.}}
+      <li><a href='#feeds/{{this.id}}'>{{this.title}}</a><span class="badge">{{this.unread}}</span></li>
+      {{/.}}
+    </script>
+
+    <script id="feed-tpl" type="text/x-handlebars-template">
+      <header>
+        <!--<a href="javascript:history.go(-1)" class="button header-button header-button-left">Back</a>-->
+        <h1>{{title}}</h1>
+      </header>
+      <div class="feed-details">
+        <!--<img src="img/{{firstName}}_{{lastName}}.jpg" alt="{{firstName}} {{lastName}}" class="feed-image" />-->
+        <div class="scroll"><ul class="article-list"></ul></div>
+      </div>
+    </script>
+
+    <script id="article-li-tpl" type="text/x-handlebars-template">
+      {{#.}}
+      <li><a href='#article_details' role='button' data-toggle='modal'>{{this.title}}</a></li>
+      {{/.}}
+    </script>
+
+    <script src="phonegap.js"></script>
+    <script src="lib/handlebars.js"></script>
+    <script src="lib/jquery-2.0.1.min.js"></script>
+    <script src="lib/jquery.ba-dotimeout.min.js"></script>
+    <script src="lib/jquery.touchSwipe.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <!--
+    <script src="lib/bootstrap-affix.js"></script>
+    <script src="lib/bootstrap-alert.js"></script>
+    <script src="lib/bootstrap-button.js"></script>
+    <script src="lib/bootstrap-carousel.js"></script>
+    <script src="lib/bootstrap-collapse.js"></script>
+    <script src="lib/bootstrap-dropdown.js"></script>
+    <script src="lib/bootstrap-modal.js"></script>
+    <script src="lib/bootstrap-popover.js"></script>
+    <script src="lib/bootstrap-scrollspy.js"></script>
+    <script src="lib/bootstrap-tab.js"></script>
+    <script src="lib/bootstrap-tooltip.js"></script>
+    <script src="lib/bootstrap-transition.js"></script>
+    <script src="lib/bootstrap-typeahead.js"></script>
+    -->
+    <script src="js/store.js"></script>
+    <script src="js/FeedsView.js"></script>
+    <script src="js/App.js"></script>
+    <script src="js/FeedDetailsView.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
